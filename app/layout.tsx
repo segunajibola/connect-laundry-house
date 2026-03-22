@@ -5,8 +5,15 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Connect Laundry House',
-  description: 'Connect Laundry House — professional laundry services',
+  title: 'Connect Laundry House — Fresh Clothes, Zero Stress',
+  description:
+    'Professional laundry and dry-cleaning services in Lagos with doorstep pickup & delivery. Washing, dry cleaning, ironing, express same-day service.',
+  keywords: 'laundry service Lagos, dry cleaning, pickup delivery laundry, ironing service Nigeria',
+  openGraph: {
+    title: 'Connect Laundry House',
+    description: 'Fresh clothes, zero stress. Pickup & delivery laundry service in Lagos.',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({

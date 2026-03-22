@@ -1,8 +1,29 @@
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import About from '@/components/About'
+import Services from '@/components/Services'
+import Pricing from '@/components/Pricing'
+import HowItWorks from '@/components/HowItWorks'
+import BookingForm from '@/components/BookingForm'
+import Testimonials from '@/components/Testimonials'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Connect Laundry House</h1>
-      <p className="mt-4 text-gray-500">Get started by editing app/page.tsx</p>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Pricing />
+        <HowItWorks />
+        <BookingForm />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
