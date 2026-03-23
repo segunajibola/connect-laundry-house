@@ -1,4 +1,5 @@
-import { Waves, Instagram, MessageCircle } from 'lucide-react'
+import Image from 'next/image'
+import { Instagram, MessageCircle } from 'lucide-react'
 
 const quickLinks = [
   { href: '#about', label: 'About Us' },
@@ -40,11 +41,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Waves className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
+                <Image
+                  src="/images/connect-logo.jpeg"
+                  alt="Connect Laundry House"
+                  width={40}
+                  height={40}
+                  className="object-cover w-full h-full"
+                />
               </div>
-              <span className="font-bold text-lg leading-tight">Connect Laundry House</span>
+              <span className="font-bold text-base leading-tight">Connect Laundry House</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Professional laundry and dry-cleaning services with doorstep pickup &amp; delivery in
@@ -100,21 +107,9 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-5">Contact</h4>
             <ul className="space-y-4 text-sm">
               {[
-                {
-                  label: 'WhatsApp',
-                  value: '+234 704 384 5448',
-                  href: 'https://wa.me/2347043845448',
-                },
-                {
-                  label: 'Email',
-                  value: 'connectlaundryhouse@gmail.com',
-                  href: 'mailto:connectlaundryhouse@gmail.com',
-                },
-                {
-                  label: 'Address',
-                  value: '26 Our Saviour Street, Lekki, Lagos',
-                  href: 'https://maps.google.com/?q=26+Our+Saviour+Street+Lekki+Lagos',
-                },
+                { label: 'WhatsApp', value: '+234 704 384 5448', href: 'https://wa.me/2347043845448' },
+                { label: 'Email', value: 'connectlaundryhouse@gmail.com', href: 'mailto:connectlaundryhouse@gmail.com' },
+                { label: 'Address', value: '26 Our Saviour Street, Lekki, Lagos', href: 'https://maps.google.com/?q=26+Our+Saviour+Street+Lekki+Lagos' },
                 { label: 'Hours', value: 'Mon – Sun: 7am – 9pm', href: null },
               ].map(({ label, value, href }) => (
                 <li key={label}>

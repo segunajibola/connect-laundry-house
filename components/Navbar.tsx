@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Waves } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -30,21 +31,24 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a
-            href="#"
-            className={`flex items-center gap-2 font-bold text-lg transition-colors ${
-              scrolled ? 'text-blue-600' : 'text-white'
-            }`}
-          >
-            <div
-              className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
-                scrolled ? 'bg-blue-600' : 'bg-white/20'
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 border border-white/20 shadow-sm">
+              <Image
+                src="/images/connect-logo.jpeg"
+                alt="Connect Laundry House"
+                width={36}
+                height={36}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <span
+              className={`font-bold text-base transition-colors ${
+                scrolled ? 'text-gray-900' : 'text-white'
               }`}
             >
-              <Waves className="w-4 h-4 text-white" />
-            </div>
-            <span className="hidden sm:inline">Connect Laundry House</span>
-            <span className="sm:hidden">Connect Laundry</span>
+              <span className="hidden sm:inline">Connect Laundry House</span>
+              <span className="sm:hidden">Connect Laundry</span>
+            </span>
           </a>
 
           {/* Desktop links */}

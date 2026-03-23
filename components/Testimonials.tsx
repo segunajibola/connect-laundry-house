@@ -2,31 +2,26 @@
 
 const testimonials = [
   {
-    initials: 'A',
-    color: 'bg-green-500',
-    name: 'Adeola',
-    role: 'Regular Customer',
-    time: '2:14 PM',
-    lines: [
-      'I really appreciate the urgency Sir',
-      "But I'm scared",
-      "I hope it'll be ready in time and rider will get there by that time",
-    ],
+    initials: "A",
+    color: "bg-green-500",
+    name: "Adeola",
+    role: "Regular Customer",
+    time: "2:14 PM",
+    lines: ["I really appreciate the urgency Sir", "I hope to get it soon."],
   },
   {
-    initials: 'F',
-    color: 'bg-purple-500',
-    name: 'Funmi',
-    role: 'Bride-to-Be',
-    time: '9:03 AM',
+    initials: "F",
+    color: "bg-purple-500",
+    name: "Funmi",
+    role: "Bride-to-Be",
+    time: "9:03 AM",
     lines: [
-      'Good morning Sir',
+      "Good morning Sir",
       "I'd still subscribe for the wedding dress deals",
       "I'll make payment once I'm ready",
-      'Wanna fish the dresses first',
     ],
   },
-]
+];
 
 export default function Testimonials() {
   return (
@@ -41,7 +36,8 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Straight from our WhatsApp — unedited, real messages from the people we serve every day.
+            Straight from our WhatsApp — unedited, real messages from the people
+            we serve every day.
           </p>
         </div>
 
@@ -53,7 +49,7 @@ export default function Testimonials() {
               className="bg-[#e5ddd5] rounded-2xl overflow-hidden shadow-md"
               style={{
                 backgroundImage:
-                  'radial-gradient(circle at 20% 80%, rgba(37,211,102,0.04) 0%, transparent 60%)',
+                  "radial-gradient(circle at 20% 80%, rgba(37,211,102,0.04) 0%, transparent 60%)",
               }}
             >
               {/* Chat header bar */}
@@ -64,7 +60,9 @@ export default function Testimonials() {
                   {initials}
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm leading-none">{name}</p>
+                  <p className="text-white font-semibold text-sm leading-none">
+                    {name}
+                  </p>
                   <p className="text-green-200 text-xs mt-0.5">{role}</p>
                 </div>
               </div>
@@ -103,5 +101,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

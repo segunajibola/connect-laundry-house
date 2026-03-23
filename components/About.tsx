@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CheckCircle, Zap, Shield, Heart } from 'lucide-react'
 
 const values = [
@@ -31,7 +32,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           {/* Left — text */}
           <div>
             <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4">
@@ -60,23 +61,53 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right — values grid */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {values.map(({ icon: Icon, title, description, color }) => (
-              <div
-                key={title}
-                className="p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group"
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${color} group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <Icon className="w-5 h-5" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+          {/* Right — location image */}
+          <div className="relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <Image
+                src="/images/connect-laundry-house.jpeg"
+                alt="Connect Laundry House — our facility in Lekki, Lagos"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Location badge */}
+              <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-xl shadow-lg">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm font-semibold text-gray-800">
+                  26 Our Saviour Street, Lekki
+                </span>
               </div>
-            ))}
+            </div>
+            {/* Second image — smaller, overlapping */}
+            <div className="absolute -bottom-6 -right-4 w-40 h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden sm:block">
+              <Image
+                src="/images/connect-laundry-house2.jpeg"
+                alt="Connect Laundry House"
+                fill
+                className="object-cover"
+                sizes="160px"
+              />
+            </div>
           </div>
+        </div>
+
+        {/* Values grid — full width below */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {values.map(({ icon: Icon, title, description, color }) => (
+            <div
+              key={title}
+              className="p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group"
+            >
+              <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${color} group-hover:scale-110 transition-transform duration-300`}
+              >
+                <Icon className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
