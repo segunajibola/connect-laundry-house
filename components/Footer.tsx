@@ -1,4 +1,4 @@
-import { Waves, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react'
+import { Waves, Instagram, MessageCircle } from 'lucide-react'
 
 const quickLinks = [
   { href: '#about', label: 'About Us' },
@@ -19,10 +19,18 @@ const services = [
 ]
 
 const socials = [
-  { Icon: Facebook, href: '#', label: 'Facebook' },
-  { Icon: Instagram, href: '#', label: 'Instagram' },
-  { Icon: Twitter, href: '#', label: 'Twitter' },
-  { Icon: MessageCircle, href: 'https://wa.me/2348000000000', label: 'WhatsApp' },
+  {
+    Icon: Instagram,
+    href: 'https://instagram.com/connectlaundryhouse247',
+    label: 'Instagram',
+    hoverColor: 'hover:bg-pink-600',
+  },
+  {
+    Icon: MessageCircle,
+    href: 'https://wa.me/2347043845448',
+    label: 'WhatsApp',
+    hoverColor: 'hover:bg-[#25D366]',
+  },
 ]
 
 export default function Footer() {
@@ -39,18 +47,18 @@ export default function Footer() {
               <span className="font-bold text-lg leading-tight">Connect Laundry House</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Professional laundry and dry-cleaning services with doorstep pickup &amp; delivery.
-              Clean clothes, stress-free life.
+              Professional laundry and dry-cleaning services with doorstep pickup &amp; delivery in
+              Lekki, Lagos. Clean clothes, stress-free life.
             </p>
             <div className="flex gap-2">
-              {socials.map(({ Icon, href, label }) => (
+              {socials.map(({ Icon, href, label, hoverColor }) => (
                 <a
                   key={label}
                   href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+                  className={`w-9 h-9 bg-slate-800 ${hoverColor} rounded-lg flex items-center justify-center transition-colors`}
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -92,13 +100,21 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-5">Contact</h4>
             <ul className="space-y-4 text-sm">
               {[
-                { label: 'Phone', value: '+234 800 000 0000', href: 'tel:+2348000000000' },
+                {
+                  label: 'WhatsApp',
+                  value: '+234 704 384 5448',
+                  href: 'https://wa.me/2347043845448',
+                },
                 {
                   label: 'Email',
-                  value: 'hello@connectlaundry.com',
-                  href: 'mailto:hello@connectlaundry.com',
+                  value: 'connectlaundryhouse@gmail.com',
+                  href: 'mailto:connectlaundryhouse@gmail.com',
                 },
-                { label: 'Location', value: 'Lagos, Nigeria', href: '#' },
+                {
+                  label: 'Address',
+                  value: '26 Our Saviour Street, Lekki, Lagos',
+                  href: 'https://maps.google.com/?q=26+Our+Saviour+Street+Lekki+Lagos',
+                },
                 { label: 'Hours', value: 'Mon – Sun: 7am – 9pm', href: null },
               ].map(({ label, value, href }) => (
                 <li key={label}>
@@ -106,7 +122,12 @@ export default function Footer() {
                     {label}
                   </span>
                   {href ? (
-                    <a href={href} className="text-slate-400 hover:text-blue-400 transition-colors">
+                    <a
+                      href={href}
+                      target={href.startsWith('http') ? '_blank' : undefined}
+                      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="text-slate-400 hover:text-blue-400 transition-colors break-words"
+                    >
                       {value}
                     </a>
                   ) : (
@@ -121,14 +142,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} Connect Laundry House. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Terms of Service
-            </a>
-          </div>
+          <p className="text-slate-600 text-xs">Eaxyconnect Global Investment Ltd.</p>
         </div>
       </div>
     </footer>

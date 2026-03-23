@@ -1,43 +1,40 @@
-import { Phone, Mail, MapPin, MessageCircle, Clock } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Instagram } from 'lucide-react'
+
+const WHATSAPP_NUMBER = '2347043845448'
+const WA_GREETING = "Hi, I'd like to book a laundry pickup"
 
 const contactCards = [
   {
-    icon: Phone,
-    title: 'Phone',
-    value: '+234 800 000 0000',
-    sub: 'Call us anytime',
-    href: 'tel:+2348000000000',
-    color: 'bg-blue-50 text-blue-600',
-  },
-  {
     icon: Mail,
     title: 'Email',
-    value: 'hello@connectlaundry.com',
+    value: 'connectlaundryhouse@gmail.com',
     sub: 'We reply within 2 hours',
-    href: 'mailto:hello@connectlaundry.com',
+    href: 'mailto:connectlaundryhouse@gmail.com',
     color: 'bg-purple-50 text-purple-600',
   },
   {
     icon: MapPin,
-    title: 'Location',
-    value: 'Lagos, Nigeria',
-    sub: 'Serving all areas',
-    href: '#',
+    title: 'Address',
+    value: '26 Our Saviour Street',
+    sub: 'Lekki, Lagos, Nigeria',
+    href: 'https://maps.google.com/?q=26+Our+Saviour+Street+Lekki+Lagos',
     color: 'bg-green-50 text-green-600',
   },
   {
-    icon: Clock,
-    title: 'Operating Hours',
-    value: 'Mon – Sun',
-    sub: '7:00 AM – 9:00 PM',
-    href: '#',
-    color: 'bg-orange-50 text-orange-600',
+    icon: Instagram,
+    title: 'Instagram',
+    value: '@connectlaundryhouse247',
+    sub: 'Follow us for offers & updates',
+    href: 'https://instagram.com/connectlaundryhouse247',
+    color: 'bg-pink-50 text-pink-600',
   },
 ]
 
 export default function Contact() {
+  const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_GREETING)}`
+
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -46,18 +43,20 @@ export default function Contact() {
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have questions or need help? We&apos;re just a message away. Available 7 days a week
-            with fast response times.
+            We&apos;re based in Lekki, Lagos and available 7 days a week. Reach us on any channel
+            below — we respond fast.
           </p>
         </div>
 
         {/* Contact cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid sm:grid-cols-3 gap-6 mb-10">
           {contactCards.map(({ icon: Icon, title, value, sub, href, color }) => (
             <a
               key={title}
               href={href}
-              className="flex flex-col items-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 hover:-translate-y-0.5 transition-all text-center group"
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="flex flex-col items-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-100 hover:-translate-y-0.5 transition-all text-center group"
             >
               <div
                 className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -67,30 +66,32 @@ export default function Contact() {
               <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
                 {title}
               </div>
-              <div className="font-bold text-gray-900 text-sm leading-snug">{value}</div>
+              <div className="font-bold text-gray-900 text-sm leading-snug break-all">{value}</div>
               <div className="text-xs text-gray-500 mt-1">{sub}</div>
             </a>
           ))}
         </div>
 
-        {/* WhatsApp CTA */}
-        <div className="text-center bg-white rounded-3xl p-10 border border-gray-100 shadow-sm">
-          <div className="w-16 h-16 bg-[#25D366]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <MessageCircle className="w-8 h-8 text-[#25D366]" />
+        {/* WhatsApp CTA — large, prominent */}
+        <div className="bg-gradient-to-br from-[#075E54] to-[#128C7E] rounded-3xl p-10 text-center">
+          <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <MessageCircle className="w-8 h-8 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Prefer to Chat?</h3>
-          <p className="text-gray-600 mb-8 max-w-sm mx-auto">
-            Reach us instantly on WhatsApp. Book a pickup, ask a question, or get a quick quote.
+          <h3 className="text-2xl font-bold text-white mb-2">Chat With Us on WhatsApp</h3>
+          <p className="text-white/75 mb-8 max-w-sm mx-auto text-sm">
+            Fastest way to book a pickup, ask questions, or send your payment proof. We&apos;re
+            online and ready to help.
           </p>
           <a
-            href="https://wa.me/2348000000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20laundry%20pickup"
+            href={waHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#20b95a] text-white font-bold rounded-full text-lg transition-all hover:shadow-xl hover:shadow-green-500/20 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#20b95a] text-white font-bold rounded-full text-lg transition-all hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-0.5"
           >
             <MessageCircle className="w-5 h-5" />
-            Chat on WhatsApp
+            Book via WhatsApp
           </a>
+          <p className="mt-5 text-white/50 text-xs">+234 704 384 5448 · Available 7 days a week</p>
         </div>
       </div>
     </section>
