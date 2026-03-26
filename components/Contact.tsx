@@ -72,6 +72,20 @@ export default function Contact() {
           ))}
         </div>
 
+        {/* Map */}
+        <div className="mb-10 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+          <iframe
+            title="Connect Laundry House location"
+            src="https://maps.google.com/maps?q=26+Our+Saviour+Street,+Lekki,+Lagos,+Nigeria&output=embed"
+            width="100%"
+            height="360"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         {/* WhatsApp CTA — large, prominent */}
         <div className="bg-gradient-to-br from-[#075E54] to-[#128C7E] rounded-3xl p-10 text-center">
           <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-5">

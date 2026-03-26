@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-20 h-9 rounded-lg overflow-hidden flex-shrink-0 border border-white/20 shadow-sm">
+            <div className="w-24 h-9 rounded-lg overflow-hidden flex-shrink-0 border border-white/20 shadow-sm">
               <Image
                 src="/images/connect-logo-new.jpeg"
                 alt="Connect Laundry House"
@@ -47,7 +47,7 @@ export default function Navbar() {
               }`}
             >
               <span className="hidden md:inline">Connect Laundry House</span>
-              <span className="md:hidden">Connect Laundry</span>
+              {/* <span className="md:hidden">Connect Laundry</span> */}
             </span>
           </a>
 
