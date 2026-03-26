@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { MessageCircle, CheckCircle } from 'lucide-react'
-
-const WA_NUMBER = '2347043845448'
+import { WHATSAPP_NUMBER as WA_NUMBER } from '@/lib/constants'
 const WA_MSG = "Hi, I'd like to get a Connect Laundry House membership card."
 
 const perks = [

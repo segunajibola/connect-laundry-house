@@ -1,6 +1,5 @@
 import { Mail, MapPin, MessageCircle, Instagram } from 'lucide-react'
-
-const WHATSAPP_NUMBER = '2347043845448'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 const WA_GREETING = "Hi, I'd like to book a laundry pickup"
 
 const contactCards = [

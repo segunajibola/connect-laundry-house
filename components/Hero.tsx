@@ -20,7 +20,6 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-48 -right-48 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-600/5 rounded-full blur-3xl" />
       </div>
 
       {/* Subtle grid overlay */}
@@ -74,7 +73,7 @@ export default function Hero() {
             href="#booking"
             className="group flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition-all hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-0.5 text-base w-full sm:w-auto justify-center"
           >
-            Schedule Pickup
+            Book a Pickup
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a

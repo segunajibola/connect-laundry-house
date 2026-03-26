@@ -11,8 +11,7 @@ import {
 } from "lucide-react";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
-const WHATSAPP_NUMBER = "2347043845448";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 const PAYMENT_PROOF_MSG =
   "Hello, I've made payment for my laundry order. Here is my proof of payment.";
 
@@ -108,6 +107,7 @@ export default function BookingForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [submittedName, setSubmittedName] = useState("");
+  const [orderId, setOrderId] = useState("");
 
   const set =
     (field: keyof FormData) =>
@@ -122,7 +122,7 @@ export default function BookingForm() {
     const e: FieldErrors = {};
     if (!form.fullName.trim()) e.fullName = "Full name is required";
     if (!form.phone.trim()) e.phone = "Phone number is required";
-    else if (!/^[+\d\s\-()]{7,}$/.test(form.phone))
+    else if (form.phone.replace(/\D/g, '').length < 7)
       e.phone = "Enter a valid phone number";
     if (!form.address.trim()) e.address = "Address is required";
     if (!form.serviceType) e.serviceType = "Please select a service";
@@ -139,13 +139,15 @@ export default function BookingForm() {
     setStatus("loading");
     try {
       if (db) {
-        await addDoc(collection(db, "bookings"), {
+        const docRef = await addDoc(collection(db, "bookings"), {
           ...form,
           status: "pending_payment",
           createdAt: serverTimestamp(),
         });
+        setOrderId(docRef.id.slice(0, 8).toUpperCase());
       } else {
         await new Promise((r) => setTimeout(r, 1200));
+        setOrderId("OFFLINE");
       }
       setSubmittedName(form.fullName.split(" ")[0]);
       setStatus("payment");
@@ -190,6 +192,7 @@ export default function BookingForm() {
                   Booking Confirmed{submittedName ? `, ${submittedName}!` : "!"}
                 </p>
                 <p className="text-green-100 text-sm">
+                  {orderId && <span className="font-mono">Ref: #{orderId} · </span>}
                   Complete your payment to finalise the order.
                 </p>
               </div>

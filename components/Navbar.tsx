@@ -72,7 +72,7 @@ export default function Navbar() {
               href="#booking"
               className="hidden md:inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:-translate-y-px"
             >
-              Book Pickup
+              Book a Pickup
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -115,7 +115,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="block mt-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-center transition-colors"
           >
-            Book Pickup
+            Book a Pickup
           </a>
         </div>
       </div>

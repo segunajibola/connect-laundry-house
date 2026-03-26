@@ -1,7 +1,6 @@
 /* Floating WhatsApp button — always visible in bottom-right corner */
 import { MessageCircle } from 'lucide-react'
-
-const WHATSAPP_NUMBER = '2347043845448'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 const MSG = "Hi, I'd like to book a laundry pickup"
 
 export default function WhatsAppFloat() {

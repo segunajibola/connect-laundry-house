@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { Instagram, MessageCircle } from 'lucide-react'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 
 const quickLinks = [
   { href: '#about', label: 'About Us' },
   { href: '#services', label: 'Services' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#how-it-works', label: 'How It Works' },
-  { href: '#booking', label: 'Book Pickup' },
+  { href: '#booking', label: 'Book a Pickup' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -28,7 +29,7 @@ const socials = [
   },
   {
     Icon: MessageCircle,
-    href: 'https://wa.me/2347043845448',
+    href: `https://wa.me/${WHATSAPP_NUMBER}`,
     label: 'WhatsApp',
     hoverColor: 'hover:bg-[#25D366]',
   },
@@ -107,7 +108,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-5">Contact</h4>
             <ul className="space-y-4 text-sm">
               {[
-                { label: 'WhatsApp', value: '+234 704 384 5448', href: 'https://wa.me/2347043845448' },
+                { label: 'WhatsApp', value: '+234 704 384 5448', href: `https://wa.me/${WHATSAPP_NUMBER}` },
                 { label: 'Email', value: 'connectlaundryhouse@gmail.com', href: 'mailto:connectlaundryhouse@gmail.com' },
                 { label: 'Address', value: '26 Our Saviour Street, Lekki, Lagos', href: 'https://maps.google.com/?q=26+Our+Saviour+Street+Lekki+Lagos' },
                 { label: 'Hours', value: 'Mon – Sun: 7am – 9pm', href: null },
