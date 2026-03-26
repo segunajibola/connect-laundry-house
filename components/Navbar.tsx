@@ -41,14 +41,14 @@ export default function Navbar() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <span
+            {/* <span
               className={`font-bold text-base transition-colors ${
                 scrolled ? "text-gray-900" : "text-white"
               }`}
             >
               <span className="hidden md:inline">Connect Laundry House</span>
-              {/* <span className="md:hidden">Connect Laundry</span> */}
-            </span>
+             <span className="md:hidden">Connect Laundry</span>
+            </span> */}
           </a>
 
           {/* Desktop links */}
