@@ -1,32 +1,36 @@
-import Image from 'next/image'
-import { CheckCircle, Zap, Shield, Heart } from 'lucide-react'
+import Image from "next/image";
+import { CheckCircle, Zap, Shield, Heart } from "lucide-react";
 
 const values = [
   {
     icon: CheckCircle,
-    title: 'Reliability',
-    description: 'We show up on time, every time. Your laundry is in safe hands from pickup to delivery.',
-    color: 'bg-blue-50 text-blue-600',
+    title: "Reliability",
+    description:
+      "We show up on time, every time. Your laundry is in safe hands from pickup to delivery.",
+    color: "bg-blue-50 text-blue-600",
   },
   {
     icon: Zap,
-    title: 'Speed',
-    description: 'Same-day and next-day express options so you are never left waiting for clean clothes.',
-    color: 'bg-yellow-50 text-yellow-600',
+    title: "Speed",
+    description:
+      "Same-day and next-day express options so you are never left waiting for clean clothes.",
+    color: "bg-yellow-50 text-yellow-600",
   },
   {
     icon: Shield,
-    title: 'Hygiene',
-    description: 'Premium detergents, sanitization protocols, and careful garment handling — every order.',
-    color: 'bg-green-50 text-green-600',
+    title: "Hygiene",
+    description:
+      "Premium detergents, sanitization protocols, and careful garment handling — every order.",
+    color: "bg-green-50 text-green-600",
   },
   {
     icon: Heart,
-    title: 'Convenience',
-    description: 'Schedule anytime. We collect from your doorstep and return everything clean and fresh.',
-    color: 'bg-red-50 text-red-600',
+    title: "Convenience",
+    description:
+      "Schedule anytime. We collect from your doorstep and return everything clean and fresh.",
+    color: "bg-red-50 text-red-600",
   },
-]
+];
 
 export default function About() {
   return (
@@ -39,24 +43,28 @@ export default function About() {
               About Us
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              We Make Laundry{' '}
+              We Make Laundry{" "}
               <span className="text-blue-600">Simple &amp; Smart</span>
             </h2>
             <p className="text-lg text-gray-600 mb-5 leading-relaxed">
-              Connect Laundry House is a reliable, tech-enabled laundry service designed to make life
-              easier for busy professionals, families, and businesses. We handle everything — from
-              everyday washing to premium dry cleaning — so you can focus on what matters most.
+              Connect Laundry House is a reliable, tech-enabled laundry service
+              designed to make life easier for busy professionals, families, and
+              businesses. We handle everything — from everyday washing to
+              premium dry cleaning — so you can focus on what matters most.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              We serve customers across Lagos with fast, affordable, and high-quality garment care.
-              Every item is treated with respect, cleaned to perfection, and returned on time.
+              We serve customers across Lagos and Abuja with fast, affordable,
+              and luxury touch of quality laundry and dry cleaning services.
+              Every item is treated with poise, cleaned to perfection, and
+              returned on time.
             </p>
 
             {/* Mission statement */}
             <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-100">
               <p className="text-blue-800 font-medium italic text-lg leading-relaxed">
-                &ldquo;Our mission is to deliver spotless, professionally cared-for garments right to
-                your door — making clean clothes one less thing to worry about.&rdquo;
+                &ldquo;Our mission is to deliver spotless, professionally
+                cared-for garments right to your door — making clean clothes one
+                less thing to worry about.&rdquo;
               </p>
             </div>
           </div>
@@ -105,11 +113,13 @@ export default function About() {
                 <Icon className="w-5 h-5" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

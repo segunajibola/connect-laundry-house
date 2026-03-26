@@ -7,7 +7,11 @@ const testimonials = [
     name: "Adeola",
     role: "Regular Customer",
     time: "2:14 PM",
-    lines: ["I really appreciate the urgency Sir", "I hope to get it soon."],
+    lines: [
+      "I really appreciate the urgency Sir",
+      "I really enjoyed the swift response by your sales team, plus even the pickup and delivery was top notch.",
+      "How do I upgrade my subscription to Platinum Yearly package from next month.?",
+    ],
   },
   {
     initials: "F",
@@ -16,9 +20,9 @@ const testimonials = [
     role: "Bride-to-Be",
     time: "9:03 AM",
     lines: [
-      "Good morning Sir",
-      "I'd still subscribe for the wedding dress deals",
-      "I'll make payment once I'm ready",
+      "Good Morning connect Laundry, thanks I just Recieved my laundry delivered to my doorstep.",
+      "wow the subscription is really discounted compare to this service I received, pls I'd like my next pickup to be on the 15th.",
+      "few of my colleagues will reachout to you to subscribe for their laundry package also, it's worth it",
     ],
   },
 ];
