@@ -1,65 +1,92 @@
-import Image from 'next/image'
-import { Check, Sparkles, Truck, CreditCard, MessageCircle } from 'lucide-react'
+import Image from "next/image";
+import {
+  Check,
+  Sparkles,
+  Truck,
+  CreditCard,
+  MessageCircle,
+} from "lucide-react";
 
 const packages = [
   {
-    name: 'Basic',
-    image: '/images/connect-basic-package.jpeg',
-    tier: 'Entry Level',
-    color: 'border-blue-200',
-    badge: 'bg-blue-600',
+    name: "Basic",
+    image: "/images/connect-basic-package.jpeg",
+    tier: "Entry Level",
+    color: "border-blue-200",
+    badge: "bg-blue-600",
+    type: "individual",
+    monthly: "₦50,000",
+    quarterly: "₦130,000",
+    yearly: "₦500,000",
   },
   {
-    name: 'Executive',
-    image: '/images/connect-executive-package.jpeg',
-    tier: 'Most Popular',
-    color: 'border-purple-200',
-    badge: 'bg-purple-600',
+    name: "Platinum",
+    image: "/images/connect-platinum-package.jpeg",
+    tier: "Premium",
+    color: "border-yellow-300",
+    badge: "bg-yellow-500",
+    type: "Famiily",
+    monthly: "₦250,000",
+    quarterly: "₦700,000",
+    yearly: "₦2,600,000",
+  },
+  {
+    name: "Executive",
+    image: "/images/connect-executive-package.jpeg",
+    tier: "Most Popular",
+    color: "border-purple-200",
+    badge: "bg-purple-600",
     featured: true,
+    type: "Group/Entity",
+    monthly: "₦1,000,000",
+    quarterly: "₦2,800,000",
+    yearly: "₦10,000,000",
   },
-  {
-    name: 'Platinum',
-    image: '/images/connect-platinum-package.jpeg',
-    tier: 'Premium',
-    color: 'border-yellow-300',
-    badge: 'bg-yellow-500',
-  },
-]
+];
 
 const kgPricing = [
-  { label: 'Standard Wash', sublabel: 'per kg, min. 3 kg', price: '₦500' },
-  { label: 'Wash & Dry', sublabel: 'per kg, min. 3 kg', price: '₦700' },
-  { label: 'Wash, Dry & Fold', sublabel: 'per kg, min. 3 kg', price: '₦900', popular: true },
-  { label: 'Bulk Order (10 kg+)', sublabel: 'special discounted rate', price: '₦750 /kg' },
-]
+  { label: "Standard Wash", sublabel: "per kg, min. 3 kg", price: "₦500" },
+  { label: "Wash & Dry", sublabel: "per kg, min. 3 kg", price: "₦700" },
+  {
+    label: "Wash, Dry & Fold",
+    sublabel: "per kg, min. 3 kg",
+    price: "₦900",
+    popular: true,
+  },
+  {
+    label: "Bulk Order (10 kg+)",
+    sublabel: "special discounted rate",
+    price: "₦750 /kg",
+  },
+];
 
 const itemPricing = [
-  { label: 'Plain Shirt / T-Shirt', price: '₦400' },
-  { label: 'Trouser / Jeans', price: '₦600' },
-  { label: 'Suit (2-piece)', price: '₦2,500', popular: true },
-  { label: 'Gown / Dress', price: '₦800 – ₦1,500' },
-  { label: 'Wedding Dress', price: 'Custom quote' },
-  { label: 'Duvet / Comforter', price: '₦2,000' },
-]
+  { label: "Plain Shirt / T-Shirt", price: "₦1,000" },
+  { label: "Trouser", price: "₦1,000" },
+  { label: "Suit (2-piece)", price: "₦5,000", popular: true },
+  { label: "Gown / Dress", price: "₦1,500 and above" },
+  { label: "Wedding Dress", price: "Custom quote" },
+  { label: "Duvet", price: "₦2,000 and above" },
+];
 
 const highlights = [
   {
     icon: Truck,
-    title: 'Free Pickup & Delivery',
-    desc: 'On all orders above ₦30,000',
-    color: 'bg-green-50 border-green-200 text-green-700',
-    iconColor: 'bg-green-100 text-green-600',
+    title: "Free Pickup & Delivery",
+    desc: "On all orders above ₦30,000",
+    color: "bg-green-50 border-green-200 text-green-700",
+    iconColor: "bg-green-100 text-green-600",
   },
   {
     icon: CreditCard,
-    title: 'Pay-As-You-Go',
-    desc: 'No subscription required. Pay only for what you send.',
-    color: 'bg-blue-50 border-blue-200 text-blue-700',
-    iconColor: 'bg-blue-100 text-blue-600',
+    title: "Pay-As-You-Go",
+    desc: "No subscription required. Pay only for what you send.",
+    color: "bg-blue-50 border-blue-200 text-blue-700",
+    iconColor: "bg-blue-100 text-blue-600",
   },
-]
+];
 
-const WA_NUMBER = '2347043845448'
+const WA_NUMBER = "2347043845448";
 
 export default function Pricing() {
   return (
@@ -74,15 +101,21 @@ export default function Pricing() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            No hidden charges. Pay only for what you need — affordable for everyone.
+            No hidden charges. Pay only for what you need — affordable for
+            everyone.
           </p>
         </div>
 
         {/* Offer highlights */}
         <div className="grid sm:grid-cols-2 gap-4 mb-16 max-w-2xl mx-auto">
           {highlights.map(({ icon: Icon, title, desc, color, iconColor }) => (
-            <div key={title} className={`flex items-start gap-4 p-5 rounded-2xl border ${color}`}>
-              <div className={`w-10 h-10 ${iconColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
+            <div
+              key={title}
+              className={`flex items-start gap-4 p-5 rounded-2xl border ${color}`}
+            >
+              <div
+                className={`w-10 h-10 ${iconColor} rounded-xl flex items-center justify-center flex-shrink-0`}
+              >
                 <Icon className="w-5 h-5" />
               </div>
               <div>
@@ -96,9 +129,12 @@ export default function Pricing() {
         {/* ── Subscription Packages ── */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">Subscription Packages</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              Subscription Packages
+            </h3>
             <p className="text-gray-600">
-              Choose a recurring plan that suits your lifestyle and save more every month.
+              Choose a recurring plan that suits your lifestyle and save more
+              every month.
             </p>
           </div>
 
@@ -107,7 +143,7 @@ export default function Pricing() {
               <div
                 key={name}
                 className={`relative rounded-3xl border-2 ${color} overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                  featured ? 'ring-2 ring-purple-400 ring-offset-2' : ''
+                  featured ? "ring-2 ring-purple-400 ring-offset-2" : ""
                 }`}
               >
                 {featured && (
@@ -139,9 +175,15 @@ export default function Pricing() {
                     </div>
                     <span className={`w-3 h-3 rounded-full ${badge}`} />
                   </div>
+                  <div>
+                    <p className="text-sm text-gray-700 mb-1">{type}</p>
+                    <li>Monthly Subscription: {monthly}</li>
+                    <li>Quarterly Subscription: {quarterly}</li>
+                    <li>Yearly Subscription: {yearly}</li>
+                  </div>
                   <a
                     href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                      `Hi, I'd like to subscribe to the ${name} Package.`
+                      `Hi, I'd like to subscribe to the ${name} Package.`,
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -159,8 +201,12 @@ export default function Pricing() {
         {/* ── Pay-as-you-go tables ── */}
         <div className="mb-8">
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">Pay-As-You-Go Rates</h3>
-            <p className="text-gray-600">No subscription needed — pay only for what you send.</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              Pay-As-You-Go Rates
+            </h3>
+            <p className="text-gray-600">
+              No subscription needed — pay only for what you send.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -168,14 +214,16 @@ export default function Pricing() {
             <div className="rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-blue-600 px-6 py-5">
                 <h4 className="text-xl font-bold text-white">Per Kilogram</h4>
-                <p className="text-blue-200 text-sm mt-1">Best for regular everyday laundry</p>
+                <p className="text-blue-200 text-sm mt-1">
+                  Best for regular everyday laundry
+                </p>
               </div>
               <div className="divide-y divide-gray-100 bg-white">
-                {kgPricing.map(item => (
+                {kgPricing.map((item) => (
                   <div
                     key={item.label}
                     className={`flex items-center justify-between px-6 py-4 transition-colors hover:bg-blue-50/50 ${
-                      item.popular ? 'bg-blue-50' : ''
+                      item.popular ? "bg-blue-50" : ""
                     }`}
                   >
                     <div>
@@ -188,9 +236,13 @@ export default function Pricing() {
                         )}
                         {item.label}
                       </div>
-                      <div className="text-xs text-gray-500 mt-0.5">{item.sublabel}</div>
+                      <div className="text-xs text-gray-500 mt-0.5">
+                        {item.sublabel}
+                      </div>
                     </div>
-                    <div className="text-blue-600 font-bold text-lg tabular-nums">{item.price}</div>
+                    <div className="text-blue-600 font-bold text-lg tabular-nums">
+                      {item.price}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -199,15 +251,19 @@ export default function Pricing() {
             {/* Per item */}
             <div className="rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-slate-800 px-6 py-5">
-                <h4 className="text-xl font-bold text-white">Per Item / Dry Clean</h4>
-                <p className="text-slate-300 text-sm mt-1">For specific garments and delicates</p>
+                <h4 className="text-xl font-bold text-white">
+                  Per Item / Dry Clean
+                </h4>
+                <p className="text-slate-300 text-sm mt-1">
+                  For specific garments and delicates
+                </p>
               </div>
               <div className="divide-y divide-gray-100 bg-white">
-                {itemPricing.map(item => (
+                {itemPricing.map((item) => (
                   <div
                     key={item.label}
                     className={`flex items-center justify-between px-6 py-4 transition-colors hover:bg-slate-50/70 ${
-                      item.popular ? 'bg-slate-50' : ''
+                      item.popular ? "bg-slate-50" : ""
                     }`}
                   >
                     <div className="flex items-center gap-2 font-medium text-gray-900">
@@ -219,7 +275,9 @@ export default function Pricing() {
                       )}
                       {item.label}
                     </div>
-                    <div className="text-slate-700 font-bold text-lg tabular-nums">{item.price}</div>
+                    <div className="text-slate-700 font-bold text-lg tabular-nums">
+                      {item.price}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -231,12 +289,13 @@ export default function Pricing() {
         <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100 flex items-start gap-3">
           <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
           <p className="text-blue-800 text-sm leading-relaxed">
-            Express service available at +50% of standard price. All prices include detergent and
-            fabric softener. Custom quotes available for bulk, business, and wedding dress orders —
-            send us a message on WhatsApp.
+            Express service available at +50% of standard price. All prices
+            include detergent and fabric softener. Custom quotes available for
+            bulk, business, and wedding dress orders — send us a message on
+            WhatsApp.
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
