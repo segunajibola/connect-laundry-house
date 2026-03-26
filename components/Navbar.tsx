@@ -47,7 +47,7 @@ export default function Navbar() {
               }`}
             >
               <span className="hidden md:inline">Connect Laundry House</span>
-              <span className="sm:hidden">Connect Laundry</span>
+              <span className="md:hidden">Connect Laundry</span>
             </span>
           </a>
 
