@@ -78,7 +78,8 @@ export default function Hero() {
       ))}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-blue-950/75 to-blue-900/70" />
+      <div className="absolute inset-0 bg-slate-900/75" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/40" />
 
       {/* Decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -109,7 +110,7 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className={`text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 transition-opacity duration-400 ${
+          className={`text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 transition-opacity duration-400 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] ${
             transitioning ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -121,7 +122,7 @@ export default function Hero() {
 
         {/* Subtext */}
         <p
-          className={`text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed transition-opacity duration-400 ${
+          className={`text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed transition-opacity duration-400 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] ${
             transitioning ? "opacity-0" : "opacity-100"
           }`}
         >
